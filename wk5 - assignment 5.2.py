@@ -4,29 +4,30 @@ If the user enters anything other than a valid number catch it with a try/except
 Enter the numbers from the book for problem 5.1 and Match the desired output as shown.
 '
 
-largest = None
-smallest = None
+# this version works better !
+
+largest = 0
+smallest = 0
+
+lst = []
+S = []
+
 while True:
-        num = raw_input("Enter a number: ")
-if num == "done" : break
+    num = input("Enter a number: ")
+    if num == "done":
+        break
+    lst.append(num)
 
 
-try:
-        num = int(num)
-except:
+for i in lst:
+    try:
+        S.append(int(i))
+    except:
         print("Invalid input")
-continue
-
-if largest is None:
-        largest = num
-elif largest < num:
-        largest = num
-
-if smallest is None:
-        smallest = num
-elif smallest > num:
-        smallest = num
-
+    continue
+       
+M = max(S)
+m = min(S)
 
 print("Maximum is", largest)
 print("Minimum is", smallest)
